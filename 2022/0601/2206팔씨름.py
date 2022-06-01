@@ -1,5 +1,5 @@
 import sys
-sys.stdin = open('./inputfolder/input4.txt', 'r')
+sys.stdin = open('2022/0601/inputfolder/input4.txt', 'r')
 
 T = int(input())
 

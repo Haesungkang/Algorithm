@@ -1,4 +1,3 @@
-from ast import While
 import sys
 
 sys.stdin = open('./2022/0601/inputfolder/input6.txt', 'r')

@@ -11,38 +11,26 @@ for i in range(node):
 
 visited = [0] * (n+1)
 result = []
-result.append(a)
-def dfs(x):
+
+# cnt를 따로 저장하는 과정
+# 차라리 처음에 cnt를 추가해라 
+def dfs(x, cnt):
+    cnt += 1
     visited[x] = 1
+    #비슷한 생각을 했는데, 여기서 result로 추가해라
     if x == b:
-        return 
-    else:
-        for w in range(n+1):
-            if arr[x][w] == 1 and visited[w] == 0:
-                result.append(w)
-                dfs(w)
+        result.append(cnt)
 
-dfs(a)
+    for w in range(n+1):
+        if arr[x][w] == 1 and visited[w] == 0:
+            dfs(w, cnt)
+
+dfs(a, 0)
 #print(result)
-chon1 = 0
-chon2 = 0
-cnt = 0
-for i in range(len(result)):
-    if result[i] == a:
-        cnt += 1
-        chon1 = i
-
-for j in range(len(result)):
-    if result[j] == b:
-        cnt += 1
-        chon2 = j
-
-#print(chon1, chon2)
-
-if abs(chon1-chon2) > 0 and cnt == 2:
-    print(abs(chon1-chon2))
-else:
+if len(result) == 0:
     print(-1)
+else: 
+    print(result[0]-1)
 
 
 

@@ -16,7 +16,7 @@ def bfs(s):
             check = True
             return 
         for i in (x-d, x+u):
-            if i < 0 or i > f or i == s:
+            if i < 1 or i > f or i == s:
                 continue
             if visited[i] == 0:
                 visited[i] = visited[x] + 1

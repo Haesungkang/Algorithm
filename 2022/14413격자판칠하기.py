@@ -1,3 +1,4 @@
+# bfs로 접근해야되는게 아니라 set이나 홀수 짝수로 판단해야하는 문제
 import sys
 sys.stdin = open('./2022/inputfolder/14413.txt', 'r')
 
@@ -18,7 +19,7 @@ def check(i, j):
                 return False
         if arr[nc][nr] == "#" or "." or "?":
             checklist.append(arr[nc][nr])
-    print(checklist)
+    #print(checklist)
     if '#' in checklist and "." in checklist:
         return False
     return True
